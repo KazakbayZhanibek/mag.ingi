@@ -114,6 +114,16 @@ body {
     text-decoration: none;
 }
 
+.logo-svg {
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.logo:hover .logo-svg {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(245,166,35,0.3));
+}
+
 .logo-icon {
     width: 44px;
     height: 44px;
@@ -421,7 +431,7 @@ body {
 
 .hero-scroll {
     position: absolute;
-    bottom: 40px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
@@ -1228,6 +1238,11 @@ a.contact-value:hover {
     width: 36px;
     height: 36px;
     font-size: 16px;
+}
+
+.footer-brand .logo-svg {
+    width: 36px;
+    height: 36px;
 }
 
 .footer-brand .logo-magas {
