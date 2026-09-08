@@ -144,42 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== FORM =====
-    const form = document.getElementById('projectForm');
-    const modal = document.getElementById('successModal');
-
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            modal.classList.add('active');
-            form.reset();
-        });
-    }
-
-    window.closeModal = () => modal.classList.remove('active');
-
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-    }
-
-    // Phone mask
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (value[0] === '7' || value[0] === '8') value = value.substring(1);
-                let formatted = '+7';
-                if (value.length > 0) formatted += ' (' + value.substring(0, 3);
-                if (value.length >= 3) formatted += ') ' + value.substring(3, 6);
-                if (value.length >= 6) formatted += '-' + value.substring(6, 8);
-                if (value.length >= 8) formatted += '-' + value.substring(8, 10);
-                e.target.value = formatted;
-            }
-        });
-    }
+    // ===== FORM (Google Forms embedded) =====
+    // Форма встроена через iframe, JS не нужен
 
     // ===== BACK TO TOP =====
     const backToTop = document.getElementById('backToTop');

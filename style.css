@@ -1173,44 +1173,24 @@ a.contact-value:hover {
     color: var(--accent);
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* GOOGLE FORM */
+.google-form-wrap {
+    background: white;
+    padding: 0;
+    overflow: hidden;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+.google-form-wrap iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+    display: block;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 16px 20px;
-    background: var(--primary-light);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    font-size: 15px;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: rgba(255,255,255,0.3);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(245,166,35,0.15);
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
+@media (max-width: 768px) {
+    .google-form-wrap iframe {
+        min-height: 500px;
+    }
 }
 
 /* FOOTER */
