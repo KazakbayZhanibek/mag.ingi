@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // NAVBAR
+    // ===== NAVBAR =====
     const navbar = document.getElementById('navbar');
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ACTIVE NAV ON SCROLL
+    // Active nav on scroll
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
-            const top = section.offsetTop - 100;
+            const top = section.offsetTop - 120;
             if (scrollY >= top) current = section.getAttribute('id');
         });
         document.querySelectorAll('.nav-links a').forEach(link => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // HERO SLIDER
+    // ===== HERO SLIDER =====
     const slides = document.querySelectorAll('.hero-slide');
     const prevBtn = document.querySelector('.hero-prev');
     const nextBtn = document.querySelector('.hero-next');
@@ -66,19 +66,34 @@ document.addEventListener('DOMContentLoaded', () => {
         startSlider();
     }
 
-    // ACCORDION
-    const accordionItems = document.querySelectorAll('.accordion-item');
-    accordionItems.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        header.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            accordionItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
-        });
-    });
+    // ===== COUNTERS =====
+    const counters = document.querySelectorAll('.counter-number');
+    let countersAnimated = false;
 
-    // SCROLL ANIMATIONS
+    function animateCounters() {
+        if (countersAnimated) return;
+        countersAnimated = true;
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 16);
+        });
+    }
+
+    // ===== SCROLL ANIMATIONS =====
     const animateElements = document.querySelectorAll('[data-animate]');
+    const counterSection = document.querySelector('.counters');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -93,7 +108,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateElements.forEach(el => observer.observe(el));
 
-    // FORM
+    // Counter animation observer
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    if (counterSection) counterObserver.observe(counterSection);
+
+    // ===== PORTFOLIO FILTER =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            portfolioCards.forEach(card => {
+                const match = filter === 'all' || card.dataset.category === filter;
+                card.style.display = match ? 'block' : 'none';
+                if (match) {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                }
+            });
+        });
+    });
+
+    // ===== FORM =====
     const form = document.getElementById('projectForm');
     const modal = document.getElementById('successModal');
 
@@ -113,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // PHONE MASK
+    // Phone mask
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', (e) => {
@@ -130,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // BACK TO TOP
+    // ===== BACK TO TOP =====
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         backToTop.classList.toggle('visible', window.scrollY > 500);
@@ -141,31 +192,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // LEAFLET MAP
+    // ===== LEAFLET MAP =====
     const mapContainer = document.getElementById('map');
     if (mapContainer && typeof L !== 'undefined') {
+        // Almaty, Kazakhstan coordinates
         const lat = 43.238949;
         const lng = 76.945465;
 
-        const map = L.map('map', { scrollWheelZoom: false }).setView([lat, lng], 14);
+        const map = L.map('map', {
+            scrollWheelZoom: false
+        }).setView([lat, lng], 14);
 
+        // CartoDB tiles (free, no blocks)
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 20
         }).addTo(map);
 
+        // Custom orange marker
         const icon = L.divIcon({
             className: 'custom-marker',
             html: '<div class="marker-pin"><div class="marker-pulse"></div></div>',
-            iconSize: [28, 38],
-            iconAnchor: [14, 38]
+            iconSize: [30, 42],
+            iconAnchor: [15, 42]
         });
 
         L.marker([lat, lng], { icon }).addTo(map)
             .bindPopup('<strong>MAGAS ENGINEERING</strong><br>г. Алматы, пр. Достык, 56')
             .openPopup();
 
+        // Fix map rendering
         setTimeout(() => map.invalidateSize(), 200);
     }
 
