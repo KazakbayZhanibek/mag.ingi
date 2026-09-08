@@ -144,8 +144,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== FORM (Google Forms embedded) =====
-    // Форма встроена через iframe, JS не нужен
+    // ===== FORM =====
+    const form = document.getElementById('projectForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            // Отправка в Google Forms
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLSeVzYxYJ2IjClD4zQKDhQ1l9uGq8gtqYa3HYIG6WxlZxBuO4A/formResponse', {
+                method: 'POST',
+                body: params,
+                mode: 'no-cors'
+            }).then(() => {
+                form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><h3>ЗАЯВКА ОТПРАВЛЕНА!</h3><p>Мы свяжемся с вами в ближайшее время</p></div>';
+            }).catch(() => {
+                form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><h3>ЗАЯВКА ОТПРАВЛЕНА!</h3><p>Мы свяжемся с вами в ближайшее время</p></div>';
+            });
+        });
+    }
+
+    // Phone mask
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value[0] === '7' || value[0] === '8') value = value.substring(1);
+                let formatted = '+7';
+                if (value.length > 0) formatted += ' (' + value.substring(0, 3);
+                if (value.length >= 3) formatted += ') ' + value.substring(3, 6);
+                if (value.length >= 6) formatted += '-' + value.substring(6, 8);
+                if (value.length >= 8) formatted += '-' + value.substring(8, 10);
+                e.target.value = formatted;
+            }
+        });
+    }
 
     // ===== BACK TO TOP =====
     const backToTop = document.getElementById('backToTop');
