@@ -1188,6 +1188,18 @@ a.contact-value:hover {
     box-shadow: 0 0 0 3px rgba(245,166,35,0.15);
 }
 
+.custom-form input:invalid:not(:placeholder-shown),
+.custom-form textarea:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.custom-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .custom-form textarea {
     resize: vertical;
     min-height: 120px;
@@ -1219,6 +1231,25 @@ a.contact-value:hover {
 .form-success p {
     color: rgba(255,255,255,0.6);
     font-size: 15px;
+}
+
+.form-error {
+    display: none;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.form-timer {
+    display: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    text-align: center;
+    margin-top: 8px;
 }
 
 /* FOOTER */

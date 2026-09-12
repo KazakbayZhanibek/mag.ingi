@@ -480,15 +480,17 @@
             </div>
             <form class="custom-form" id="projectForm" data-animate="fade-left">
                 <div class="form-row">
-                    <input type="text" name="entry.195708288" placeholder="Ваше имя" required>
-                    <input type="tel" name="entry.837627139" placeholder="Телефон" required id="phone">
+                    <input type="text" name="entry.195708288" placeholder="Ваше имя" required minlength="2">
+                    <input type="tel" name="entry.837627139" placeholder="Телефон" required id="phone" pattern="[\+]\d{1}\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}">
                 </div>
-                <input type="email" name="entry.1819887641" placeholder="Почта">
-                <textarea name="entry.745570409" placeholder="Опишите ваш проект..." rows="4"></textarea>
-                <button type="submit" class="btn btn-primary btn-full">
+                <input type="email" name="entry.1819887641" placeholder="Почта" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+                <textarea name="entry.745570409" placeholder="Опишите ваш проект..." rows="4" minlength="10"></textarea>
+                <div class="form-error" id="formError"></div>
+                <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
                     ОТПРАВИТЬ ЗАЯВКУ
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                 </button>
+                <div class="form-timer" id="formTimer"></div>
             </form>
         </div>
     </div>

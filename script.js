@@ -146,23 +146,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== FORM =====
     const form = document.getElementById('projectForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formError = document.getElementById('formError');
+    const formTimer = document.getElementById('formTimer');
+    const COOLDOWN = 60; // seconds
+    let lastSubmit = localStorage.getItem('lastFormSubmit') || 0;
+
+    // Check cooldown on load
+    function checkCooldown() {
+        const now = Math.floor(Date.now() / 1000);
+        const diff = COOLDOWN - (now - lastSubmit);
+        if (diff > 0) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `ПОДОЖДИТЕ ${diff}с`;
+            formTimer.textContent = `Можно отправить через ${diff}с`;
+            formTimer.style.display = 'block';
+            setTimeout(checkCooldown, 1000);
+        } else {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'ОТПРАВИТЬ ЗАЯВКУ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
+            formTimer.style.display = 'none';
+        }
+    }
+    checkCooldown();
+
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            formError.style.display = 'none';
+
+            const name = form.querySelector('input[name="entry.195708288"]').value.trim();
+            const phone = form.querySelector('input[name="entry.837627139"]').value.trim();
+            const message = form.querySelector('textarea').value.trim();
+
+            // Validation
+            if (name.length < 2) {
+                formError.textContent = 'Введите имя (минимум 2 символа)';
+                formError.style.display = 'block';
+                return;
+            }
+            if (phone.replace(/\D/g, '').length < 11) {
+                formError.textContent = 'Введите корректный номер телефона';
+                formError.style.display = 'block';
+                return;
+            }
+            if (message.length > 0 && message.length < 10) {
+                formError.textContent = 'Опишите проект подробнее (минимум 10 символов)';
+                formError.style.display = 'block';
+                return;
+            }
+
+            // Cooldown check
+            const now = Math.floor(Date.now() / 1000);
+            if (now - lastSubmit < COOLDOWN) {
+                formError.textContent = 'Подождите перед следующей отправкой';
+                formError.style.display = 'block';
+                return;
+            }
+
+            // Submit
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'ОТПРАВКА...';
+
             const formData = new FormData(form);
             const params = new URLSearchParams();
             for (const [key, value] of formData.entries()) {
                 params.append(key, value);
             }
-            // Отправка в Google Forms
+
             fetch('https://docs.google.com/forms/d/e/1FAIpQLSeVzYxYJ2IjClD4zQKDhQ1l9uGq8gtqYa3HYIG6WxlZxBuO4A/formResponse', {
                 method: 'POST',
                 body: params,
                 mode: 'no-cors'
             }).then(() => {
+                localStorage.setItem('lastFormSubmit', Math.floor(Date.now() / 1000));
+                lastSubmit = Math.floor(Date.now() / 1000);
                 form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><h3>ЗАЯВКА ОТПРАВЛЕНА!</h3><p>Мы свяжемся с вами в ближайшее время</p></div>';
             }).catch(() => {
-                form.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><h3>ЗАЯВКА ОТПРАВЛЕНА!</h3><p>Мы свяжемся с вами в ближайшее время</p></div>';
+                formError.textContent = 'Ошибка отправки. Попробуйте позже';
+                formError.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'ОТПРАВИТЬ ЗАЯВКУ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
             });
         });
     }
