@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Scroll to top if URL has hash (prevent auto-jump)
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+        window.scrollTo(0, 0);
+    }
+
     // ===== NAVBAR =====
     const navbar = document.getElementById('navbar');
     const mobileToggle = document.getElementById('mobileToggle');
