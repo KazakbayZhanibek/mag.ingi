@@ -6,6 +6,12 @@
     <meta name="description" content="MAGAS ENGINEERING — строительная компания полного цикла в Алматы. Строим с нуля до сдачи объекта.">
     <link rel="icon" type="image/png" href="logo4.png">
     <title>MAGAS ENGINEERING</title>
+    <script>
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+            window.scrollTo(0, 0);
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
