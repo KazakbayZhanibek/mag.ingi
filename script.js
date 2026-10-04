@@ -120,30 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (counterSection) counterObserver.observe(counterSection);
 
-    // ===== PORTFOLIO FILTER =====
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            portfolioCards.forEach(card => {
-                const match = filter === 'all' || card.dataset.category === filter;
-                card.style.display = match ? 'block' : 'none';
-                if (match) {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 50);
-                }
-            });
-        });
-    });
-
     // ===== FORM =====
     const form = document.getElementById('projectForm');
     const submitBtn = document.getElementById('submitBtn');
@@ -257,40 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    }
-
-    // ===== LEAFLET MAP =====
-    const mapContainer = document.getElementById('map');
-    if (mapContainer && typeof L !== 'undefined') {
-        // Almaty, Kazakhstan coordinates
-        const lat = 43.238949;
-        const lng = 76.945465;
-
-        const map = L.map('map', {
-            scrollWheelZoom: false
-        }).setView([lat, lng], 14);
-
-        // CartoDB tiles (free, no blocks)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-            subdomains: 'abcd',
-            maxZoom: 20
-        }).addTo(map);
-
-        // Custom orange marker
-        const icon = L.divIcon({
-            className: 'custom-marker',
-            html: '<div class="marker-pin"><div class="marker-pulse"></div></div>',
-            iconSize: [30, 42],
-            iconAnchor: [15, 42]
-        });
-
-        L.marker([lat, lng], { icon }).addTo(map)
-            .bindPopup('<strong>MAGAS ENGINEERING</strong><br>г. Алматы, пр. Достык, 56')
-            .openPopup();
-
-        // Fix map rendering
-        setTimeout(() => map.invalidateSize(), 200);
     }
 
 });

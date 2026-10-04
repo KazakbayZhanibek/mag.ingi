@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MAGAS ENGINEERING — строительная компания полного цикла в Алматы. Строим с нуля до сдачи объекта.">
+    <meta name="description" content="MAGAS ENGINEERING — проектирование инженерных сетей и строительно-монтажные работы в Алматы.">
     <link rel="icon" type="image/png" href="logo4.png">
     <title>MAGAS ENGINEERING</title>
     <script>
@@ -12,8 +12,7 @@
             window.scrollTo(0, 0);
         }
     </script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,13 +23,13 @@
 <div class="top-bar">
     <div class="container">
         <div class="top-bar-left">
-            <span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                Пн-Пт: 9:00 - 18:00
-            </span>
+            <a href="mailto:magas-eng@mail.ru">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                magas-eng@mail.ru
+            </a>
             <span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                +7 (727) 123-45-67
+                +7 (727) 380-05-39
             </span>
         </div>
         <div class="top-bar-right">
@@ -49,7 +48,7 @@
             <li><a href="#home" class="active">Главная</a></li>
             <li><a href="#about">О нас</a></li>
             <li><a href="#services">Услуги</a></li>
-            <li><a href="#portfolio">Проекты</a></li>
+            <li><a href="#portfolio">Клиенты</a></li>
             <li><a href="#contacts">Контакты</a></li>
         </ul>
         <a href="#contact-form" class="nav-cta">
@@ -74,12 +73,12 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <div class="hero-badge" data-animate="fade-up">Строительная компания</div>
+        <div class="hero-badge" data-animate="fade-up">ТОО «MAGAS ENGINEERING» • С 2009 ГОДА</div>
         <h1 class="hero-title" data-animate="fade-up" data-delay="100">
-            СТРОИМ С НУЛЯ<br><span class="accent">ДО СДАЧИ ОБЪЕКТА</span>
+            ИНЖЕНЕРНЫЕ СЕТИ<br><span class="accent">И СТРОИТЕЛЬСТВО</span>
         </h1>
         <p class="hero-desc" data-animate="fade-up" data-delay="200">
-            Полный цикл строительных работ — от проектирования до ввода в эксплуатацию. Надёжность, качество, прозрачность на каждом этапе.
+            Проектируем и монтируем системы водоснабжения, канализации, отопления, вентиляции и электроснабжения. Выполняем строительно-монтажные работы любой сложности.
         </p>
         <div class="hero-buttons" data-animate="fade-up" data-delay="300">
             <a href="#contact-form" class="btn btn-primary">
@@ -112,24 +111,24 @@
     <div class="container">
         <div class="counters-grid">
             <div class="counter-item">
-                <div class="counter-number" data-target="15">0</div>
-                <div class="counter-suffix">+</div>
-                <div class="counter-label">Лет на рынке</div>
+                <div class="counter-number" data-target="2009">0</div>
+                <div class="counter-suffix"></div>
+                <div class="counter-label">Год основания</div>
             </div>
             <div class="counter-item">
-                <div class="counter-number" data-target="250">0</div>
-                <div class="counter-suffix">+</div>
-                <div class="counter-label">Объектов сдано</div>
+                <div class="counter-number" data-target="3">0</div>
+                <div class="counter-suffix"> кат.</div>
+                <div class="counter-label">Проектная деятельность</div>
             </div>
             <div class="counter-item">
-                <div class="counter-number" data-target="50">0</div>
-                <div class="counter-suffix">+</div>
-                <div class="counter-label">Специалистов</div>
+                <div class="counter-number" data-target="2">0</div>
+                <div class="counter-suffix"> кат.</div>
+                <div class="counter-label">Строительно-монтажные работы</div>
             </div>
             <div class="counter-item">
-                <div class="counter-number" data-target="98">0</div>
-                <div class="counter-suffix">%</div>
-                <div class="counter-label">Довольных клиентов</div>
+                <div class="counter-number" data-target="2">0</div>
+                <div class="counter-suffix"></div>
+                <div class="counter-label">Профильные лицензии</div>
             </div>
         </div>
     </div>
@@ -149,8 +148,8 @@
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
                 </div>
-                <h3>ВЫСОКОЕ КАЧЕСТВО</h3>
-                <p>Используем только сертифицированные материалы и проверенные технологии строительства</p>
+                <h3>С 2009 ГОДА</h3>
+                <p>Многолетний опыт проектирования и монтажа инженерных систем</p>
             </div>
             <div class="feature-item" data-animate="fade-up" data-delay="100">
                 <div class="feature-icon">
@@ -159,8 +158,8 @@
                         <path d="M12 6v6l4 2"/>
                     </svg>
                 </div>
-                <h3>СОБЛЮДЕНИЕ СРОКОВ</h3>
-                <p>Гарантируем сдачу объекта в оговоренные сроки. Работаем по четкому графику</p>
+                <h3>ПО НОРМАМ И ПРАВИЛАМ</h3>
+                <p>Проекты и работы выполняются с соблюдением действующих норм и правил</p>
             </div>
             <div class="feature-item" data-animate="fade-up" data-delay="200">
                 <div class="feature-icon">
@@ -169,8 +168,8 @@
                         <circle cx="12" cy="10" r="3"/>
                     </svg>
                 </div>
-                <h3>ДОСТУПНЫЕ ЦЕНЫ</h3>
-                <p>Прозрачное ценообразование без скрытых платежей. Индивидуальный подход к каждому клиенту</p>
+                <h3>ЛЮБАЯ СЛОЖНОСТЬ</h3>
+                <p>Готовим инженерные решения для городских объектов и загородных домов</p>
             </div>
             <div class="feature-item" data-animate="fade-up" data-delay="300">
                 <div class="feature-icon">
@@ -178,8 +177,8 @@
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                 </div>
-                <h3>ГАРАНТИИ</h3>
-                <p>Предоставляем гарантию на все виды работ. Страхование объектов на весь период строительства</p>
+                <h3>ДВЕ ЛИЦЕНЗИИ</h3>
+                <p>Проектная деятельность III категории и строительно-монтажные работы II категории</p>
             </div>
         </div>
     </div>
@@ -193,24 +192,24 @@
             <div class="about-left" data-animate="fade-right">
                 <span class="section-tag">О нас</span>
                 <h2 class="section-title left">НАША <span class="accent">КОМПАНИЯ</span></h2>
-                <p class="about-text">MAGAS ENGINEERING — это команда профессионалов с многолетним опытом работы в сфере строительства, проектирования и инжиниринга.</p>
-                <p class="about-text">Мы выполняем полный цикл работ: от разработки проектной документации до сдачи готового объекта «под ключ». Наша цель — обеспечить высочайшее качество на каждом этапе.</p>
+                <p class="about-text">ТОО «Magas Engineering» с 2009 года специализируется на проектировании систем водоснабжения и канализации, выполняет прокладку и монтаж водопровода и канализации.</p>
+                <p class="about-text">Компания также выполняет проектные и строительно-монтажные работы по инженерным сетям, дорогам, технологическому оборудованию и специальным строительным конструкциям.</p>
                 <div class="about-principles">
                     <div class="principle">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Прозрачность на каждом этапе</span>
+                        <span>Внутренние и наружные инженерные сети</span>
                     </div>
                     <div class="principle">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Соблюдение сроков и бюджета</span>
+                        <span>Капитальный ремонт и реконструкция</span>
                     </div>
                     <div class="principle">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Гарантия на все виды работ</span>
+                        <span>Монтаж технологического оборудования</span>
                     </div>
                     <div class="principle">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Индивидуальный подход</span>
+                        <span>Дороги и специальные строительные работы</span>
                     </div>
                 </div>
             </div>
@@ -222,8 +221,8 @@
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <span class="about-card-value">г. Алматы, Республика Казахстан</span>
-                    <span class="about-card-label">География работы</span>
+                    <span class="about-card-value">г. Алматы, ул. Жарокова, 215</span>
+                    <span class="about-card-label">Офис компании</span>
                 </div>
                 <div class="about-card">
                     <div class="about-card-icon">
@@ -232,8 +231,8 @@
                             <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
                         </svg>
                     </div>
-                    <span class="about-card-value">Все виды лицензий</span>
-                    <span class="about-card-label">Лицензии и допуски</span>
+                    <span class="about-card-value">ГСЛ № 8258</span>
+                    <span class="about-card-label">Проектная деятельность III категории</span>
                 </div>
                 <div class="about-card">
                     <div class="about-card-icon">
@@ -243,8 +242,8 @@
                             <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
                         </svg>
                     </div>
-                    <span class="about-card-value">50+ квалифицированных сотрудников</span>
-                    <span class="about-card-label">Ключевые специалисты</span>
+                    <span class="about-card-value">ГСЛ 14014590</span>
+                    <span class="about-card-label">Строительно-монтажные работы II категории</span>
                 </div>
                 <div class="about-card">
                     <div class="about-card-icon">
@@ -253,8 +252,8 @@
                             <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
-                    <span class="about-card-value">15+ лет успешной работы</span>
-                    <span class="about-card-label">Опыт на рынке</span>
+                    <span class="about-card-value">С 2009 года</span>
+                    <span class="about-card-label">Опыт проектирования и монтажа</span>
                 </div>
             </div>
         </div>
@@ -267,65 +266,98 @@
         <div class="section-header">
             <span class="section-tag">Что мы делаем</span>
             <h2 class="section-title">НАШИ <span class="accent">УСЛУГИ</span></h2>
-            <p class="section-desc">Полный спектр строительных и инженерных услуг</p>
+            <p class="section-desc">Проектирование, монтаж, капитальный ремонт и реконструкция</p>
         </div>
         <div class="services-grid">
             <div class="service-card" data-animate="fade-up">
                 <div class="service-card-img">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Строительство" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80" alt="Монтаж систем водоснабжения" loading="lazy">
                     <div class="service-card-overlay">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6"/>
+                            <path d="M12 2.7S5.5 10 5.5 15.1a6.5 6.5 0 0013 0C18.5 10 12 2.7 12 2.7z"/>
                         </svg>
                     </div>
                 </div>
                 <div class="service-card-body">
-                    <h3>Строительство</h3>
+                    <h3>Водоснабжение и канализация</h3>
                     <div class="service-list">
-                        <span>Общестроительные работы</span>
-                        <span>Благоустройство территории</span>
-                        <span>Капитальный ремонт</span>
-                        <span>Фасадные работы</span>
+                        <span>Горячее и холодное водоснабжение</span>
+                        <span>Бытовая, производственная и ливневая канализация</span>
+                        <span>Внутренние и наружные сети</span>
+                        <span>Прокладка и монтаж трубопроводов</span>
                     </div>
                 </div>
             </div>
             <div class="service-card" data-animate="fade-up" data-delay="100">
                 <div class="service-card-img">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=80" alt="Инжиниринг" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Инженерные системы зданий" loading="lazy">
                     <div class="service-card-overlay">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 20V10M18 20V4M6 20v-4"/>
+                            <path d="M4 20V9l8-5 8 5v11M8 20v-7h8v7M9 9h6"/>
                         </svg>
                     </div>
                 </div>
                 <div class="service-card-body">
-                    <h3>Инжиниринг</h3>
+                    <h3>Климатические и газовые системы</h3>
                     <div class="service-list">
-                        <span>Авторский надзор</span>
-                        <span>Технический надзор</span>
-                        <span>Сметы и расчёты</span>
-                        <span>Техническое задание</span>
+                        <span>Отопление, включая электрическое</span>
+                        <span>Вентиляция и кондиционирование</span>
+                        <span>Холодоснабжение</span>
+                        <span>Газоснабжение низкого давления</span>
                     </div>
                 </div>
             </div>
             <div class="service-card" data-animate="fade-up" data-delay="200">
                 <div class="service-card-img">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" alt="Проектирование" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80" alt="Электроснабжение и освещение" loading="lazy">
                     <div class="service-card-overlay">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-                            <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+                            <path d="M13 2L5 14h7l-1 8 8-12h-7l1-8z"/>
                         </svg>
                     </div>
                 </div>
                 <div class="service-card-body">
-                    <h3>Проектирование</h3>
+                    <h3>Электроснабжение и освещение</h3>
                     <div class="service-list">
-                        <span>Генеральный план</span>
-                        <span>Инженерные сети</span>
-                        <span>Архитектурные решения</span>
-                        <span>Конструктив зданий</span>
+                        <span>Внутренние системы электроснабжения</span>
+                        <span>Наружные сети и электроосвещение</span>
+                        <span>Электроотопление</span>
+                        <span>Сети предприятий воздушного и железнодорожного транспорта</span>
                     </div>
+                </div>
+            </div>
+            <div class="service-card" data-animate="fade-up">
+                <div class="service-card-img">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80" alt="Строительство автомобильных и железных дорог" loading="lazy">
+                    <div class="service-card-overlay">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19h18M5 16l2-9h10l2 9M8 16v3M16 16v3M9 11h6"/></svg>
+                    </div>
+                </div>
+                <div class="service-card-body">
+                    <h3>Автомобильные и железные дороги</h3>
+                    <div class="service-list">
+                        <span>Основания и покрытия</span><span>Защитные сооружения и обустройство</span><span>Проезжая часть улиц и магистралей</span><span>Железнодорожные пути</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card" data-animate="fade-up" data-delay="100">
+                <div class="service-card-img">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80" alt="Монтаж технологического оборудования" loading="lazy">
+                    <div class="service-card-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0015 19.4a1.7 1.7 0 00-1 .6 1.7 1.7 0 00-.4 1.1V21H9.6v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-.6-1 1.7 1.7 0 00-1.1-.4H3V9.6h.1A1.7 1.7 0 004.6 8.5a1.7 1.7 0 00-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 009 4.6a1.7 1.7 0 001-.6 1.7 1.7 0 00.4-1.1V3h4v.1A1.7 1.7 0 0015.5 4.6a1.7 1.7 0 001.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0019.4 9c.08.37.29.72.6 1 .3.26.69.4 1.1.4h.1v4h-.1A1.7 1.7 0 0019.4 15z"/></svg></div>
+                </div>
+                <div class="service-card-body">
+                    <h3>Технологическое оборудование</h3>
+                    <div class="service-list"><span>Системы связи, защиты, контроля и сигнализации</span><span>Объекты энергетики и жизнеобеспечения</span><span>Приборы учёта и контроля</span><span>Гидротехнические и мелиоративные сооружения</span></div>
+                </div>
+            </div>
+            <div class="service-card" data-animate="fade-up" data-delay="200">
+                <div class="service-card-img">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80" alt="Специальные строительные работы" loading="lazy">
+                    <div class="service-card-overlay"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M5 20V9l7-5 7 5v11M8 20v-6h8v6"/></svg></div>
+                </div>
+                <div class="service-card-body">
+                    <h3>Специальные строительные работы</h3>
+                    <div class="service-list"><span>Буровые работы в грунте и устройство оснований</span><span>Несущие и ограждающие конструкции</span><span>Мосты, эстакады, тоннели и путепроводы</span><span>Линии электропередач, резервуары и магистральные трубопроводы</span></div>
                 </div>
             </div>
         </div>
@@ -336,61 +368,21 @@
 <section id="portfolio" class="portfolio">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Наши проекты</span>
-            <h2 class="section-title">ПОРТФОЛИО <span class="accent">ПРОЕКТОВ</span></h2>
-            <p class="section-desc">Реализованные проекты и довольные клиенты</p>
+            <span class="section-tag">Нам доверяют</span>
+            <h2 class="section-title">НАШИ <span class="accent">КЛИЕНТЫ</span></h2>
+            <p class="section-desc">Компании и организации, указанные в корпоративном буклете MAGAS ENGINEERING</p>
         </div>
-        <div class="portfolio-filter">
-            <button class="filter-btn active" data-filter="all">Все</button>
-            <button class="filter-btn" data-filter="commercial">Коммерческие</button>
-            <button class="filter-btn" data-filter="residential">Жилые</button>
-            <button class="filter-btn" data-filter="industrial">Промышленные</button>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-card" data-category="commercial" data-animate="fade-up">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Бизнес-центр" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Коммерческое</span>
-                        <h4>Бизнес-центр «Горизонт»</h4>
-                        <p>г. Алматы • 12 000 м²</p>
-                        <a href="#" class="portfolio-link">ПОДРОБНЕЕ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" data-category="residential" data-animate="fade-up" data-delay="100">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Жилой комплекс" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Жилое</span>
-                        <h4>ЖК «Речной парк»</h4>
-                        <p>г. Алматы • 25 000 м²</p>
-                        <a href="#" class="portfolio-link">ПОДРОБНЕЕ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" data-category="commercial" data-animate="fade-up" data-delay="200">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?w=600&q=80" alt="Торговый центр" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Коммерческое</span>
-                        <h4>ТРЦ «Меридиан»</h4>
-                        <p>г. Астана • 35 000 м²</p>
-                        <a href="#" class="portfolio-link">ПОДРОБНЕЕ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-card" data-category="industrial" data-animate="fade-up" data-delay="300">
-                <div class="portfolio-image">
-                    <img src="https://images.unsplash.com/photo-1590725140305-97e1e9878d84?w=600&q=80" alt="Логистический центр" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Промышленное</span>
-                        <h4>Логистический центр «Транс-Юг»</h4>
-                        <p>г. Шымкент • 18 000 м²</p>
-                        <a href="#" class="portfolio-link">ПОДРОБНЕЕ</a>
-                    </div>
-                </div>
-            </div>
+        <div class="clients-grid">
+            <div class="client-name" data-animate="fade-up">TAU HOUSE</div>
+            <div class="client-name" data-animate="fade-up" data-delay="50">алма</div>
+            <div class="client-name" data-animate="fade-up" data-delay="100">Медицинский центр «Авиценна»</div>
+            <div class="client-name" data-animate="fade-up" data-delay="150">Европолис</div>
+            <div class="client-name" data-animate="fade-up">Parmigiano</div>
+            <div class="client-name" data-animate="fade-up" data-delay="50">Азия Паркет</div>
+            <div class="client-name" data-animate="fade-up" data-delay="100">ARMADA STROY</div>
+            <div class="client-name" data-animate="fade-up" data-delay="150">Казахфильм</div>
+            <div class="client-name" data-animate="fade-up">Royal Tulip Almaty</div>
+            <div class="client-name client-name-more" data-animate="fade-up" data-delay="50">и другие</div>
         </div>
     </div>
 </section>
@@ -412,8 +404,9 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="contact-label">Телефон</span>
-                            <a href="tel:+77271234567" class="contact-value">+7 (727) 123-45-67</a>
+                            <span class="contact-label">Телефоны</span>
+                            <a href="tel:+77273800539" class="contact-value">+7 (727) 380-05-39</a>
+                            <a href="tel:+77052181645" class="contact-value">+7 (705) 218-16-45</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -425,7 +418,7 @@
                         </div>
                         <div>
                             <span class="contact-label">Почта</span>
-                            <a href="mailto:info@magas-engineering.kz" class="contact-value">info@magas-engineering.kz</a>
+                            <a href="mailto:magas-eng@mail.ru" class="contact-value">magas-eng@mail.ru</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -437,7 +430,7 @@
                         </div>
                         <div>
                             <span class="contact-label">Адрес</span>
-                            <span class="contact-value">г. Алматы, пр. Достык, 56</span>
+                            <span class="contact-value">Республика Казахстан, г. Алматы,<br>ул. Жарокова, 215, 2 этаж, офис 4</span>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -448,14 +441,38 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="contact-label">График работы</span>
-                            <span class="contact-value">Пн-Пт: 9:00 — 18:00</span>
+                            <span class="contact-label">Ориентиры</span>
+                            <span class="contact-value">ул. Утепова, ул. Басенова, ул. Тимирязева</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="contacts-map" data-animate="fade-left">
-                <div id="map"></div>
+                <div id="map">
+                    <iframe
+                        title="MAGAS ENGINEERING на Яндекс Картах — ул. Жарокова, 215, Алматы"
+                        src="https://yandex.ru/map-widget/v1/?ll=76.900908%2C43.224747&amp;z=16&amp;pt=76.900908%2C43.224747%2Cpm2rdm&amp;l=map"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="map-card">
+                        <div class="map-pin" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="2.5"/>
+                            </svg>
+                        </div>
+                        <div class="map-address">
+                            <span>Офис MAGAS ENGINEERING</span>
+                            <strong>Алматы, ул. Жарокова, 215</strong>
+                            <small>2 этаж, офис 4</small>
+                        </div>
+                        <a class="map-link" href="https://yandex.ru/maps/?ll=76.900908%2C43.224747&amp;mode=routes&amp;rtext=~43.224747%2C76.900908&amp;rtt=auto&amp;z=16" target="_blank" rel="noopener">
+                            Построить маршрут
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -472,15 +489,15 @@
                 <div class="form-features">
                     <div class="form-feature">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Бесплатная консультация</span>
+                        <span>Проектная деятельность III категории</span>
                     </div>
                     <div class="form-feature">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Расчёт стоимости за 1 день</span>
+                        <span>Строительно-монтажные работы II категории</span>
                     </div>
                     <div class="form-feature">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Индивидуальное решение</span>
+                        <span>Инженерные решения любой сложности</span>
                     </div>
                 </div>
             </div>
@@ -511,27 +528,28 @@
                     <img src="logo4.png" alt="MAGAS ENGINEERING" class="logo-img-footer">
                     <span class="footer-logo-text">MAGAS ENGINEERING</span>
                 </a>
-                <p>Строительная компания полного цикла. Строим с нуля до сдачи объекта.</p>
+                <p>Проектируем и монтируем инженерные сети, выполняем строительные работы с 2009 года.</p>
             </div>
             <div class="footer-links">
                 <h4>Навигация</h4>
                 <a href="#home">Главная</a>
                 <a href="#about">О нас</a>
                 <a href="#services">Услуги</a>
-                <a href="#portfolio">Проекты</a>
+                <a href="#portfolio">Клиенты</a>
                 <a href="#contacts">Контакты</a>
             </div>
             <div class="footer-links">
                 <h4>Услуги</h4>
-                <a href="#services">Строительство</a>
-                <a href="#services">Инжиниринг</a>
-                <a href="#services">Проектирование</a>
+                <a href="#services">Инженерные сети</a>
+                <a href="#services">Дорожное строительство</a>
+                <a href="#services">Специальные работы</a>
             </div>
             <div class="footer-contacts">
                 <h4>Контакты</h4>
-                <a href="tel:+77271234567">+7 (727) 123-45-67</a>
-                <a href="mailto:info@magas-engineering.kz">info@magas-engineering.kz</a>
-                <span>г. Алматы, пр. Достык, 56</span>
+                <a href="tel:+77273800539">+7 (727) 380-05-39</a>
+                <a href="tel:+77052181645">+7 (705) 218-16-45</a>
+                <a href="mailto:magas-eng@mail.ru">magas-eng@mail.ru</a>
+                <span>г. Алматы, ул. Жарокова, 215, офис 4</span>
             </div>
         </div>
         <div class="footer-bottom">
@@ -541,7 +559,7 @@
 </footer>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/77001234567" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+<a href="https://wa.me/77052181645" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -552,7 +570,6 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
