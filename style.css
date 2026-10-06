@@ -127,43 +127,23 @@ body {
     color: var(--primary);
 }
 
-.brand-symbol-frame {
-    width: 48px;
-    height: 48px;
+.brand-logo-frame {
+    width: 220px;
+    height: 58px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    flex: 0 0 48px;
+}
+
+.brand-logo-image {
+    width: 100%;
+    height: auto;
+    display: block;
     transition: var(--transition);
 }
 
-.brand-symbol {
-    width: 96px;
-    height: 96px;
-    display: block;
-    max-width: none;
-    transform: translate(-24px, -24px);
-}
-
-.brand-copy {
-    display: grid;
-    gap: 1px;
-    line-height: 1;
-}
-
-.brand-copy strong {
-    font-size: 17px;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-}
-
-.brand-copy small {
-    color: #526477;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-}
-
-.brand-wordmark:hover .brand-symbol-frame {
-    transform: translateY(-2px);
+.brand-wordmark:hover .brand-logo-image {
+    transform: translateY(-1px) scale(1.01);
 }
 
 .logo-img {
@@ -192,12 +172,12 @@ body {
     align-items: center;
 }
 
-.footer-wordmark .brand-copy strong {
-    color: white;
-}
-
-.footer-wordmark .brand-copy small {
-    color: rgba(255, 255, 255, 0.76);
+.footer-wordmark .brand-logo-frame {
+    width: 240px;
+    height: 76px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
 }
 
 .footer-logo-text {
@@ -1766,24 +1746,14 @@ a.contact-value:hover {
         height: 36px;
     }
 
-    .brand-symbol-frame {
-        width: 40px;
-        height: 40px;
-        flex-basis: 40px;
+    .brand-logo-frame {
+        width: 180px;
+        height: 50px;
     }
 
-    .brand-symbol {
-        width: 80px;
-        height: 80px;
-        transform: translate(-20px, -20px);
-    }
-
-    .brand-copy strong {
-        font-size: 14px;
-    }
-
-    .brand-copy small {
-        font-size: 11px;
+    .footer-wordmark .brand-logo-frame {
+        width: 220px;
+        height: 70px;
     }
 
     .nav-links {
