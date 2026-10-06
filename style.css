@@ -127,18 +127,20 @@ body {
     color: var(--primary);
 }
 
-.brand-mark {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    color: var(--primary);
-    background: var(--accent);
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 900;
-    letter-spacing: -0.03em;
+.brand-symbol-frame {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    flex: 0 0 48px;
     transition: var(--transition);
+}
+
+.brand-symbol {
+    width: 96px;
+    height: 96px;
+    display: block;
+    max-width: none;
+    transform: translate(-24px, -24px);
 }
 
 .brand-copy {
@@ -160,7 +162,7 @@ body {
     letter-spacing: 0.08em;
 }
 
-.brand-wordmark:hover .brand-mark {
+.brand-wordmark:hover .brand-symbol-frame {
     transform: translateY(-2px);
 }
 
@@ -1764,10 +1766,16 @@ a.contact-value:hover {
         height: 36px;
     }
 
-    .brand-mark {
-        width: 38px;
-        height: 38px;
-        font-size: 13px;
+    .brand-symbol-frame {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .brand-symbol {
+        width: 80px;
+        height: 80px;
+        transform: translate(-20px, -20px);
     }
 
     .brand-copy strong {
