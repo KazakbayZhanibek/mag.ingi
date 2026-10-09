@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kazakbayzhanibek.github.io/mag.ingi/sitemap.xml

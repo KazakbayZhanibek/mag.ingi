@@ -2,24 +2,49 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="TOO ENERGY STROY LTD — проектирование инженерных сетей и строительно-монтажные работы в Алматы.">
+    <meta name="theme-color" content="#071d2d">
+    <link rel="canonical" href="https://kazakbayzhanibek.github.io/mag.ingi/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_KZ">
+    <meta property="og:title" content="TOO ENERGY STROY LTD">
+    <meta property="og:description" content="Проектирование инженерных сетей и строительно-монтажные работы в Алматы.">
+    <meta property="og:url" content="https://kazakbayzhanibek.github.io/mag.ingi/">
+    <meta property="og:image" content="https://kazakbayzhanibek.github.io/mag.ingi/energy-stroy-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TOO ENERGY STROY LTD">
+    <meta name="twitter:description" content="Проектирование инженерных сетей и строительно-монтажные работы в Алматы.">
+    <meta name="twitter:image" content="https://kazakbayzhanibek.github.io/mag.ingi/energy-stroy-logo.png">
     <link rel="icon" type="image/png" href="energy-stroy-symbol.png">
     <title>TOO ENERGY STROY LTD</title>
-    <script>
-        if (window.location.hash) {
-            history.replaceState(null, null, window.location.pathname + window.location.search);
-            window.scrollTo(0, 0);
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "TOO ENERGY STROY LTD",
+        "url": "https://kazakbayzhanibek.github.io/mag.ingi/",
+        "image": "https://kazakbayzhanibek.github.io/mag.ingi/energy-stroy-logo.png",
+        "telephone": "+77052181645",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Алматы",
+            "streetAddress": "микрорайон 2, дом 2, офис 3",
+            "addressCountry": "KZ"
         }
+    }
     </script>
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Перейти к содержанию</a>
 
 <!-- TOP BAR -->
+<header class="site-header">
 <div class="top-bar">
     <div class="container">
         <div class="top-bar-left"></div>
@@ -46,20 +71,22 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             Обсудить проект
         </a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Открыть меню" aria-controls="navLinks" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
 </nav>
+</header>
 
 <!-- HERO -->
+<main id="main-content">
 <section id="home" class="hero">
     <div class="hero-slider">
         <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')"></div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80')"></div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1920&q=80')"></div>
+        <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80"></div>
+        <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1920&q=80"></div>
 
     </div>
     <div class="hero-overlay"></div>
@@ -90,6 +117,9 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
     </div>
+    <button class="hero-pause" id="heroPause" aria-label="Остановить слайдер" aria-pressed="false">
+        <svg class="pause-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+    </button>
     <div class="hero-bottom-shape"></div>
     <div class="hero-scroll">
         <span>Листайте вниз</span>
@@ -467,23 +497,41 @@
                     </div>
                 </div>
             </div>
-            <form class="custom-form" id="projectForm" data-animate="fade-left">
+            <form class="custom-form" id="projectForm" data-animate="fade-left" novalidate>
                 <div class="form-row">
-                    <input type="text" name="entry.195708288" placeholder="Ваше имя" required minlength="2">
-                    <input type="tel" name="entry.837627139" placeholder="Телефон" required id="phone" pattern="[\+]\d{1}\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}">
+                    <div class="form-field">
+                        <label for="name">Ваше имя <span aria-hidden="true">*</span></label>
+                        <input type="text" name="entry.195708288" id="name" autocomplete="name" placeholder="Например, Айжан" required minlength="2" maxlength="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">Телефон <span aria-hidden="true">*</span></label>
+                        <input type="tel" name="entry.837627139" placeholder="+7 (___) ___-__-__" required id="phone" autocomplete="tel" inputmode="tel" pattern="[\+]\d{1}\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}">
+                    </div>
                 </div>
-                <input type="email" name="entry.1819887641" placeholder="Почта" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
-                <textarea name="entry.745570409" placeholder="Опишите ваш проект..." rows="4" minlength="10"></textarea>
-                <div class="form-error" id="formError"></div>
+                <div class="form-field">
+                    <label for="email">Почта <span class="field-optional">необязательно</span></label>
+                    <input type="email" name="entry.1819887641" id="email" autocomplete="email" placeholder="name@example.com" maxlength="254">
+                </div>
+                <div class="form-field">
+                    <label for="projectMessage">О проекте <span class="field-optional">необязательно</span></label>
+                    <textarea name="entry.745570409" id="projectMessage" placeholder="Коротко опишите задачу" rows="4" minlength="10" maxlength="2000"></textarea>
+                </div>
+                <label class="form-consent" for="privacyConsent">
+                    <input type="checkbox" id="privacyConsent" required>
+                    <span>Согласен(на) с <a href="privacy.html" target="_blank" rel="noopener">обработкой персональных данных</a>.</span>
+                </label>
+                <p class="form-note">Данные передаются через Google Forms.</p>
+                <div class="form-error" id="formError" role="alert" aria-live="assertive"></div>
                 <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
                     ОТПРАВИТЬ ЗАЯВКУ
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                 </button>
-                <div class="form-timer" id="formTimer"></div>
+                <div class="form-timer" id="formTimer" aria-live="polite"></div>
             </form>
         </div>
     </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -502,6 +550,7 @@
                 <a href="#services">Услуги</a>
                 <a href="#portfolio">Клиенты</a>
                 <a href="#contacts">Контакты</a>
+                <a href="privacy.html">Конфиденциальность</a>
             </div>
             <div class="footer-links">
                 <h4>Услуги</h4>
@@ -533,6 +582,6 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
