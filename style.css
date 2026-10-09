@@ -4,21 +4,23 @@
     box-sizing: border-box;
 }
 :root {
-    --primary: #0f1923;
-    --primary-light: #1a2a3a;
-    --accent: #f5a623;
-    --accent-dark: #d4901c;
-    --accent-light: #fff3dc;
-    --text: #1a1a1a;
-    --text-light: #5a6a7a;
-    --text-muted: #8a9aaa;
-    --bg: #ffffff;
-    --bg-alt: #f7f8fa;
-    --border: #e8eaed;
-    --shadow: 0 2px 8px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-    --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+    --primary: #071d2e;
+    --primary-light: #123a56;
+    --accent: #f5a012;
+    --accent-dark: #9c5c00;
+    --accent-light: #fff0d3;
+    --text: #17212b;
+    --text-light: #53616d;
+    --text-muted: #71808c;
+    --bg: #fafaf7;
+    --bg-alt: #f5f2ea;
+    --bg-steel: #e9eff2;
+    --surface: #ffffff;
+    --border: #d7e0e5;
+    --shadow: 0 3px 10px rgba(7,29,46,0.07);
+    --shadow-md: 0 8px 24px rgba(7,29,46,0.09);
+    --shadow-lg: 0 16px 42px rgba(7,29,46,0.13);
+    --shadow-xl: 0 24px 64px rgba(7,29,46,0.16);
     --radius: 6px;
     --radius-lg: 12px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,6 +40,34 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+    color: var(--primary);
+    background: var(--accent);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+* {
+    scrollbar-color: var(--accent) var(--primary);
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border: 2px solid var(--primary);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -46,7 +76,7 @@ body {
 
 /* TOP BAR */
 .top-bar {
-    background: var(--primary);
+    background: #041522;
     color: rgba(255,255,255,0.8);
     padding: 10px 0;
     font-size: 13px;
@@ -97,7 +127,7 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background: white;
+    background: var(--bg);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -290,7 +320,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(15,25,35,0.88) 0%, rgba(15,25,35,0.6) 50%, rgba(15,25,35,0.35) 100%);
+    background: linear-gradient(135deg, rgba(7,29,46,0.9) 0%, rgba(7,29,46,0.66) 52%, rgba(7,29,46,0.38) 100%);
 }
 
 .hero-content {
@@ -573,7 +603,7 @@ body {
 /* FEATURES */
 .features {
     padding: 80px 0;
-    background: white;
+    background: var(--bg-steel);
 }
 
 .features-grid {
@@ -589,7 +619,7 @@ body {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-    background: white;
+    background: var(--surface);
 }
 
 .feature-item::before {
@@ -713,7 +743,7 @@ body {
 }
 
 .about-card {
-    background: white;
+    background: var(--surface);
     padding: 24px;
     border: 1px solid var(--border);
     transition: var(--transition);
@@ -779,7 +809,7 @@ body {
 /* SERVICES */
 .services {
     padding: 100px 0;
-    background: white;
+    background: var(--bg);
 }
 
 .services-grid {
@@ -795,6 +825,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    background: var(--surface);
 }
 
 .service-card::before {
@@ -840,7 +871,7 @@ body {
 .service-card-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15,25,35,0.8);
+    background: rgba(7,29,46,0.84);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -907,21 +938,35 @@ body {
 /* PORTFOLIO */
 .portfolio {
     padding: 100px 0;
-    background: var(--bg-alt);
+    color: white;
+    background: var(--primary);
+}
+
+.portfolio .section-title {
+    color: white;
+}
+
+.portfolio .section-desc {
+    color: rgba(233,239,242,0.72);
+}
+
+.portfolio .section-tag {
+    color: #ffd58e;
+    background: rgba(245,160,18,0.14);
 }
 
 .clients-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1px;
-    background: var(--border);
+    background: rgba(255,255,255,0.14);
     box-shadow: var(--shadow-md);
 }
 
 .client-name {
     min-height: 132px;
     padding: 24px;
-    background: white;
+    background: #f9f7f2;
     color: var(--primary);
     display: flex;
     align-items: center;
@@ -1099,7 +1144,7 @@ body {
 /* CONTACTS */
 .contacts {
     padding: 100px 0;
-    background: white;
+    background: var(--bg-alt);
 }
 
 .contacts-layout {
@@ -1119,7 +1164,7 @@ body {
     align-items: flex-start;
     gap: 16px;
     padding: 20px;
-    background: var(--bg-alt);
+    background: var(--surface);
     border: 1px solid var(--border);
     transition: var(--transition);
     position: relative;
@@ -1196,7 +1241,7 @@ a.contact-value:hover {
     width: 100%;
     height: 440px;
     position: relative;
-    background: var(--bg-alt);
+    background: var(--bg-steel);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 18px 45px rgba(15, 25, 35, 0.14);
@@ -1301,7 +1346,7 @@ a.contact-value:hover {
 /* CONTACT FORM */
 .contact-form-section {
     padding: 100px 0;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, #0c3049 100%);
 }
 
 .form-layout {
@@ -1444,7 +1489,7 @@ a.contact-value:hover {
 
 /* FOOTER */
 .footer {
-    background: #0a1018;
+    background: #04111c;
     padding-top: 60px;
 }
 
