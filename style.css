@@ -75,7 +75,9 @@ section:not(.hero) { padding-block: var(--space-section); }
 .about-card-label { color: var(--muted); font-size: 14px; }
 .services { background: #f0f2ef; }
 .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 36px; }
-.service-card { border-top: 2px solid #b7c3c7; padding-top: 26px; }
+.service-card { min-width: 0; }
+.service-image { width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; background: #d9dedc; margin-bottom: 24px; }
+.service-photo-note { grid-column: 1 / -1; color: var(--muted); font-size: 14px; margin-top: 4px; }
 .service-card h3 { font-size: 23px; letter-spacing: -.025em; min-height: 56px; }
 .service-list { display: grid; gap: 12px; margin-top: 22px; color: var(--muted); }
 .service-list span { display: block; padding-left: 16px; position: relative; }
@@ -188,7 +190,7 @@ input:user-invalid, textarea:user-invalid { border: 2px solid #c5382c; }
   .about-card { padding-block: 18px; }
   .about-card:first-child { padding-top: 18px; border-top: 1px solid var(--line); }
   .services-grid { grid-template-columns: 1fr; gap: 30px; }
-  .service-card { padding-top: 22px; }
+  .service-image { margin-bottom: 20px; }
   .service-card h3 { min-height: 0; font-size: 24px; max-width: 28ch; }
   .service-list { margin-top: 16px; gap: 8px; }
   .clients-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

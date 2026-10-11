@@ -9,6 +9,8 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
 assert.equal(ids.length, new Set(ids).size, 'Duplicate ids');
 for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]), 'Broken anchor ' + match[1]);
 assert.equal((html.match(/class="service-card"/g) || []).length, 6, 'All six services must remain');
+assert.equal((html.match(/class="service-image"/g) || []).length, 6, 'Each service needs a photo');
+assert.equal((html.match(/class="service-image"[^>]+loading="lazy"/g) || []).length, 6, 'Service photos must lazy-load');
 assert(!/heroPause|hero-slider|hero-prev|hero-next/.test(html + js), 'Slider must be removed');
 assert(!/localStorage|fetch\s*\(|setInterval/.test(js), 'No opaque submit, storage dependency or slideshow timer');
 assert(/method="post"/.test(html) && /forms\/d\/e\/[^"]+\/formResponse/.test(html), 'Native form endpoint');
